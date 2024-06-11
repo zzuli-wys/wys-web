@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=6.0">
+<title>Login Form</title>
+<script>
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Check if username and password are not empty
+  if (username.trim() === "" || password.trim() === "") {
+    alert("Please enter both username and password.");
+    return false;
+  }
+
+  // Check if username contains only alphanumeric characters
+  var alphanumeric = /^[0-9a-zA-Z]+$/;
+  if (!username.match(alphanumeric)) {
+    alert("Username can only contain letters and numbers.");
+    return false;
+  }
+
+  // Check if password length is at least 8 characters
+  if (password.length < 8) {
+    alert("Password must be at least 8 characters long.");
+    return false;
+  }
+ alert("Welcome you login!请稍等，页面正在跳转,若跳转失败，请点击下面页面之间跳转............");
+
+  return true;
+}
+</script>
+</head>
+<body>
+<body background="3.png">
+
+<div id="loginArea">
+  <h2>Login</h2>
+  <form onsubmit="return validateForm()">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <input type="submit" value="Submit">
+    <meta http-equiv="refresh" content="30;url=index.html">
+     <li><a href="index.html">若跳转失败请点击回到主页！</a></li>
+
+  </form>
+</div>
+
+</body>
+</html>
